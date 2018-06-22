@@ -101,7 +101,7 @@ export class AudienceComponent implements OnInit {
         "surname": ["", [Validators.required,
           Validators.pattern('[A-Za-z]+')]],
         "email": ["", [Validators.required,
-          Validators.pattern('^[0-9A-Za-z]{1,10}@[0-9a-zA-Z_]+?\.[a-zA-Z]{2,5}$')]],
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]],
         "country": ["", [Validators.required,
           Validators.pattern('[A-Za-z\\s]+')]],
         "city": [""],
