@@ -154,5 +154,16 @@ input[type="checkbox"]:disabled + .label-text:before{
   padding: 5px;
 }
 
+#interests-block, #jobs-block {
+  display: inline-block;
+  width:33%;
+  padding: 3px;
+}
+
+@media (max-width: 480px) {
+  #interests-block, #jobs-block {
+    width: 100%;
+  }
+}
 
 
