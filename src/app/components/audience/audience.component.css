@@ -151,7 +151,7 @@ input[type="checkbox"]:disabled + .label-text:before{
 }
 
 .dropdownPlatform {
-  padding: 5px;
+  padding-top: 5px;
 }
 
 #interests-block, #jobs-block {
@@ -160,10 +160,52 @@ input[type="checkbox"]:disabled + .label-text:before{
   padding: 3px;
 }
 
+.left-column {
+  display: inline-block;
+  overflow-y:scroll;
+  height:560px;
+  background-color:#f7f7f7;
+}
+
 @media (max-width: 480px) {
-  #interests-block, #jobs-block {
+  #interests-block, #jobs-block, #select-platform-block{
     width: 100%;
   }
+  .sectionsInfo p {
+    font-size: 15px;
+  }
+  #firstName-block, #lastName-block, #country-block, #city-block {
+    width: 100%;
+  }
+  .left-column{
+    height: 100%;
+  }
+  #dropdownBasic1 {
+    width: 100%;
+    font-size: 13px;
+  }
+  .dropdown-item, #submitForm_btn, .moreBtn{
+    font-size: 13px;
+  }
+  .form-control {
+    padding: 5px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  #dropdownBasic1 {
+    width: 100%;
+    font-size: 10px;
+  }
+  .form-control {
+    font-size: 10px;
+  }
+}
+
+.form-check {
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 

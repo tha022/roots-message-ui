@@ -1,12 +1,12 @@
 <div style="margin: 10px">
   <form [formGroup]="audienceForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="row">
-    <div class="col-6" style="display: inline-block; overflow-y:scroll;height:560px;background-color:#f7f7f7">
+    <div class="col-6 left-column">
          <!--style=style="overflow-y:scroll;height:300px;background-color: cornsilk"-->
       <div class="sectionsInfo" id="personalInfo">
         <p>Personal Information</p>
         <div class="row">
-          <div class="col col-xs-12">
+          <div id="firstName-block" class="col-lg-6 col-sm-12 col-xs-12">
             <label  class="center-block" for="firstName"> First name: </label>
             <input  class="form-control" type="text" formControlName="name" id="firstName" [(ngModel)]="newAudience.name" name="firstName" required>
             <div *ngIf="formErrors.name" class="alert alert-danger">
@@ -14,7 +14,7 @@
             </div>
           </div>
 
-          <div class="col col-xs-12">
+          <div id="lastName-block" class="col-lg-6 col-sm-12 col-xs-12">
             <label  class="center-block" for="lastName"> Last name: </label>
             <input  class="form-control" type="text" formControlName="surname" id="lastName" [(ngModel)]="newAudience.surname" name="lastName" required>
             <div *ngIf="formErrors.surname" class="alert alert-danger">
@@ -37,28 +37,28 @@
       <div class="sectionsInfo">
       <p>Audience Information</p>
       <div class="row">
-        <div class="col col-xs-12">
+        <div id="country-block" class="col-lg-6 col-sm-12 col-xs-12">
           <label for="typeahead-by-country">County:</label>
           <input id="typeahead-by-country" type="text"  formControlName="country" class="form-control" [(ngModel)]="newAudience.country" [ngbTypeahead]="searchByCountry"  required>
           <div *ngIf="formErrors.country" class="alert alert-danger">
             {{ formErrors.country }}
           </div>
         </div>
-        <div class="col col-xs-12">
+        <div id="city-block" class="col-lg-6 col-sm-12 col-xs-12">
           <label for="typeahead-by-city">City:</label>
           <input id="typeahead-by-city" type="text"  formControlName="city" class="form-control" [(ngModel)]="newAudience.city" [ngbTypeahead]="searchByCity">
         </div>
       </div>
 
       <div class="row">
-        <div class="col col-xs-12">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
           <label  class="center-block"> From age: </label>
           <input id="fromAge" class="form-control" type="number" formControlName="ageFrom" value="18" min="18" max="90" [(ngModel)]="newAudience.ageFrom" required>
           <div *ngIf="formErrors.ageFrom" class="alert alert-danger">
             {{ formErrors.ageFrom }}
           </div>
         </div>
-        <div class="col col-xs-12">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
           <label  class="center-block"> To age: </label>
           <input id="toAge" class="form-control" type="number" formControlName="ageTo" value="20" min="18" max="90" [(ngModel)]="newAudience.ageTo" required>
           <div *ngIf="formErrors.ageTo" class="alert alert-danger">
@@ -120,7 +120,7 @@
     <div class="col-6" style=" display: inline-block; background-color:#f7f7f7">
       <div class="row">
         <div class="col col-xs-12">
-          <div ngbDropdown class="d-inline-block dropdownPlatform">
+          <div ngbDropdown id="select-platform-block" class="d-inline-block dropdownPlatform">
             <button class="btn btn-outline-info" id="dropdownBasic1" ngbDropdownToggle>Choose Platform</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button (click)="setPlatform($event)" class="dropdown-item">Facebook</button>
@@ -131,7 +131,7 @@
       </div>
 
       <div class="row">
-        <div class="col col-xs-12">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
           <label  class="center-block" for="login"> Login: </label>
           <input  class="form-control" type="text"  id="login" formControlName="login" [(ngModel)]="newAudience.login" required >
           <div *ngIf="formErrors.login" class="alert alert-danger">
@@ -139,7 +139,7 @@
           </div>
         </div>
 
-        <div class="col col-xs-12">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
           <label  class="center-block" for="password"> Password: </label>
           <input id="password" class="form-control" [type]="showPassword.checked ? 'text' : 'password'" formControlName="password" [(ngModel)]="newAudience.password" required>
           <div class="form-check">
