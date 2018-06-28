@@ -20,7 +20,6 @@ export class AudienceComponent implements OnInit {
   selectedPlatform = 'Facebook';
 
   setPlatform(event) {
-    this.newAudience.platform = event.toElement.innerHTML;
     this.selectedPlatform = event.toElement.innerHTML;
     console.log(event.toElement.innerHTML);
   }
@@ -149,6 +148,7 @@ export class AudienceComponent implements OnInit {
     this.newAudience.gender = this.audienceForm.controls['gender'].value;
     this.newAudience.interests = (this.interestsList.map((obj) => obj.value)).filter((obj) => obj.length > 0);
     this.newAudience.jobs = (this.jobsList.map((obj) => obj.value)).filter((obj) => obj.length > 0);
+    this.newAudience.platform = this.selectedPlatform;
     this.newAudience.timeOfCampaign = this.timeOfCampaign;
     this.newAudience.organicReach = this.organicReach;
     // console.log(this.newAudience);
