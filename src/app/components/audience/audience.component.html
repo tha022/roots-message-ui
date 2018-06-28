@@ -38,7 +38,7 @@
       <p>Audience Information</p>
       <div class="row">
         <div id="country-block" class="col-lg-6 col-sm-12 col-xs-12">
-          <label for="typeahead-by-country">County:</label>
+          <label for="typeahead-by-country">Country:</label>
           <input id="typeahead-by-country" type="text"  formControlName="country" class="form-control" [(ngModel)]="newAudience.country" [ngbTypeahead]="searchByCountry"  required>
           <div *ngIf="formErrors.country" class="alert alert-danger">
             {{ formErrors.country }}
