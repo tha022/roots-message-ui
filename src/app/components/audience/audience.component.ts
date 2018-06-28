@@ -15,12 +15,16 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class AudienceComponent implements OnInit {
 
-  setPlatform(event) {
-    this.newAudience.platform = event.toElement.innerHTML;
-    console.log(event.toElement.innerHTML);
-  }
   audienceForm: FormGroup;
   public  newAudience: Audience = new Audience('', '', '', '', '', '', '', '', '');
+  selectedPlatform = 'Facebook';
+
+  setPlatform(event) {
+    this.newAudience.platform = event.toElement.innerHTML;
+    this.selectedPlatform = event.toElement.innerHTML;
+    console.log(event.toElement.innerHTML);
+  }
+
 
   constructor(
     private audienceService: AudienceService,
@@ -149,10 +153,10 @@ export class AudienceComponent implements OnInit {
     this.newAudience.organicReach = this.organicReach;
     // console.log(this.newAudience);
     this.audienceService.createAudience(this.newAudience).subscribe((newAudience) => {
+        this.modalService.open(content);
         this.newAudience = new Audience('', '', '', '', '', '', '', '', '')
       });
     // console.log(this.newAudience);
-    this.modalService.open(content);
 
     this.audienceForm.reset();
   }

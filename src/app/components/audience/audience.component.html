@@ -118,10 +118,15 @@
 
       <!-- right side-->
     <div class="col-6" style=" display: inline-block; background-color:#f7f7f7">
+
       <div class="row">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
+          <label  class="center-block"> Choose Platform: </label>
+        </div>
+
         <div class="col col-xs-12">
           <div ngbDropdown id="select-platform-block" class="d-inline-block dropdownPlatform">
-            <button class="btn btn-outline-info" id="dropdownBasic1" ngbDropdownToggle>Choose Platform</button>
+            <button class="btn btn-outline-info" id="dropdownBasic1" ngbDropdownToggle>{{selectedPlatform}}</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button (click)="setPlatform($event)" class="dropdown-item">Facebook</button>
               <button (click)="setPlatform($event)" class="dropdown-item">Instagram</button>
